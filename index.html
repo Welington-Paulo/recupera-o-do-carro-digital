@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garagem Inteligente - Sistema Completo</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Opcional: Datepicker CSS -->
+</head>
+<body>
+    <header>
+        <h1>Garagem Inteligente Pro</h1>
+        <div id="notificacoes" class="notificacoes-area" style="display: none;"></div>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-link active" data-tab="tab-garagem">Garagem</button>
+        <button class="tab-link" data-tab="tab-add-veiculo">Adicionar Veículo</button>
+        <button class="tab-link" data-tab="tab-agendamentos">Agendamentos</button>
+    </nav>
+
+    <main id="main-content">
+        <!-- Conteúdo da Tab Garagem -->
+        <section id="tab-garagem" class="tab-content active">
+            <h2>Veículos na Garagem</h2>
+            <div id="lista-veiculos">
+                <!-- Veículos serão listados aqui -->
+                <p>Carregando veículos...</p>
+            </div>
+        </section>
+
+        <!-- Conteúdo da Tab Adicionar Veículo -->
+        <section id="tab-add-veiculo" class="tab-content">
+            <h2>Adicionar Novo Veículo</h2>
+            <form id="form-add-veiculo" class="card">
+                 <!-- Mantém o mesmo formulário da versão anterior -->
+                 <label for="tipo-veiculo">Tipo:</label>
+                 <select id="tipo-veiculo" required>
+                     <option value="Carro">Carro</option>
+                     <option value="CarroEsportivo">Carro Esportivo</option>
+                     <option value="Caminhao">Caminhão</option>
+                 </select>
+
+                 <label for="veiculo-id">ID (Placa):</label>
+                 <input type="text" id="veiculo-id" required>
+
+                 <label for="veiculo-marca">Marca:</label>
+                 <input type="text" id="veiculo-marca" required>
+
+                 <label for="veiculo-modelo">Modelo:</label>
+                 <input type="text" id="veiculo-modelo" required>
+
+                 <label for="veiculo-ano">Ano:</label>
+                 <input type="number" id="veiculo-ano" required min="1900" max="2100">
+
+                 <label for="veiculo-cor">Cor:</label>
+                 <input type="text" id="veiculo-cor" required>
+
+                 <!-- Campos específicos -->
+                 <div class="campos-especificos" id="campos-carro">
+                     <label for="carro-portas">Nº Portas:</label>
+                     <input type="number" id="carro-portas" min="2" value="4">
+                 </div>
+                 <div class="campos-especificos" id="campos-carro-esportivo" style="display: none;">
+                      <label for="esportivo-portas">Nº Portas:</label>
+                      <input type="number" id="esportivo-portas" min="2" value="2">
+                      <label for="esportivo-velmax">Vel. Máxima (km/h):</label>
+                      <input type="number" id="esportivo-velmax" min="100">
+                 </div>
+                  <div class="campos-especificos" id="campos-caminhao" style="display: none;">
+                     <label for="caminhao-carga">Cap. Carga (Ton):</label>
+                     <input type="number" id="caminhao-carga" step="0.1" min="0">
+                     <label for="caminhao-eixos">Nº Eixos:</label>
+                     <input type="number" id="caminhao-eixos" min="2">
+                 </div>
+
+                 <button type="submit">Adicionar Veículo</button>
+            </form>
+        </section>
+
+        <!-- Conteúdo da Tab Agendamentos -->
+        <section id="tab-agendamentos" class="tab-content">
+            <h2>Próximos Agendamentos</h2>
+            <div id="lista-agendamentos-geral" class="card">
+                <!-- Agendamentos consolidados serão listados aqui -->
+                <p>Verificando agendamentos...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Garagem Inteligente Pro</p>
+    </footer>
+
+    <!-- Scripts JS (Ordem importa!) -->
+    <script src="Manutencao.js"></script>
+    <script src="Veiculo.js"></script>   <!-- Inclui Carro, CarroEsportivo, Caminhao -->
+    <script src="Garagem.js"></script>
+    <!-- Opcional: Datepicker JS -->
+    <script src="JS/script.js"></script>    <!-- Lógica principal atualizada -->
+</body>
+</html>

@@ -1,0 +1,150 @@
+/* style.css */
+/* Estilos anteriores (body, h1, form, card, etc.) mantidos */
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 0; /* Remove margin bottom if tabs are directly below */
+}
+
+header h1 {
+    margin: 0;
+    color: white; /* Override default h1 color if needed */
+}
+
+.notificacoes-area {
+    /* Posicionamento pode variar: abaixo do header, canto superior, etc. */
+    padding: 10px;
+    margin: 10px 20px; /* Adjust margin if needed */
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.notificacao-sucesso { background-color: #5cb85c; }
+.notificacao-erro { background-color: #d9534f; }
+.notificacao-info { background-color: #5bc0de; }
+.notificacao-aviso { background-color: #f0ad4e; color: #333; }
+
+
+/* Estilos das Abas */
+.tabs {
+    background-color: #eee;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    text-align: center; /* Center tabs */
+}
+
+.tab-link {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0; /* Rounded top corners */
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.tab-link:hover {
+    background-color: #ccc;
+}
+
+.tab-link.active {
+    background-color: #fff; /* Cor de fundo da aba ativa */
+    color: #0275d8; /* Cor do texto da aba ativa */
+    border-bottom: 2px solid #0275d8; /* Linha indicadora */
+}
+
+/* Estilos do Conteúdo das Abas */
+main#main-content {
+    padding: 20px;
+}
+
+.tab-content {
+    display: none; /* Esconde todas as abas por padrão */
+    animation: fadeIn 0.5s ease-in-out; /* Animação suave */
+}
+
+.tab-content.active {
+    display: block; /* Mostra a aba ativa */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Ajustes na Lista de Veículos para expansão (se aplicável) */
+#lista-veiculos .veiculo-item {
+    /* ... (estilos anteriores) ... */
+    cursor: pointer; /* Indica que é clicável para ver detalhes */
+    position: relative; /* Para posicionar botões se necessário */
+}
+#lista-veiculos .veiculo-item:hover {
+    background-color: #e0e0e0; /* Leve destaque no hover */
+}
+
+
+#lista-veiculos .veiculo-detalhes {
+    /* Estilos para a área de detalhes que aparece ao clicar */
+    background-color: #fff;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px; /* Cantos inferiores arredondados */
+    display: none; /* Escondido por padrão */
+}
+#lista-veiculos .veiculo-item.expanded .veiculo-detalhes {
+    display: block; /* Mostra quando o item está expandido */
+}
+
+
+/* Ajustes no formulário de manutenção dentro dos detalhes */
+.form-manutencao {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+.form-manutencao h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+
+/* Lista de Agendamentos Gerais */
+#lista-agendamentos-geral ul {
+    list-style: none;
+    padding: 0;
+}
+#lista-agendamentos-geral li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+#lista-agendamentos-geral li:last-child {
+    border-bottom: none;
+}
+#lista-agendamentos-geral .agendamento-data {
+    font-weight: bold;
+    color: #0275d8;
+}
+#lista-agendamentos-geral .agendamento-veiculo {
+    font-style: italic;
+    color: #555;
+}
+
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
